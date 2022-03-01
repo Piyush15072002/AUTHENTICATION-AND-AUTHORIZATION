@@ -1,20 +1,22 @@
 <%- layout('boilerplate') -%>
 
-    <div>
-        <a href="/login">Login</a>
-        <a href="/register">Register</a>
-    </div>
+    <% if(!currentUser){ %>
+        <div>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+        <%} else{%>
 
-    <div>
-        <form action="/logout" method="POST">
-            <button type="submit" class="">Logout</button>
-        </form>
-    </div>
-
-    <div>
-        <h1>WELCOME TO AUTH BASICS</h1>
-        <p>Here we will make an authenticated application where user can login, register and logout.
-            We will be using PASSPORT.js in this section for authentication
-        </p>
-        <a href="/index">Go to Index</a>
-    </div>
+            <div>
+                <form action="/logout" method="POST">
+                    <button type="submit" class="">Logout</button>
+                </form>
+            </div>
+            <% } %>
+                <div>
+                    <h1>WELCOME TO AUTH BASICS</h1>
+                    <p>Here we will make an authenticated application where user can login, register and logout.
+                        We will be using PASSPORT.js in this section for authentication
+                    </p>
+                    <a href="/index">Go to Index</a>
+                </div>
